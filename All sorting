@@ -1,0 +1,56 @@
+import java.util.*;
+
+
+public class Arrays {
+   public static void main(String args[]) {
+       Scanner sc = new Scanner(System.in);
+       int size = sc.nextInt();
+       int numbers[] = new int[size];
+       
+
+       for(int i=0; i<size; i++) {
+           numbers[i] = sc.nextInt();
+       }
+       //Selection sort
+       for(int i=0;i<size;i++){
+        for(int j=i+1;j<=size-1;j++){
+            if(numbers[i]>numbers[j]){
+                int temp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+            }
+        }
+       }
+       //Bubble sort
+    for(int i=0;i<size;i++){
+             for(int j=0;j<size-i;j++){
+                if(numbers[j]>numbers[j+1]){
+                    int temp =numbers[j];
+                    numbers[j] = numbers[j+1];
+                    numbers[j+1]  = temp;
+                }
+
+             }
+            }     
+     // Insertion Sort
+    for(int i=1;i<size;i++){
+        int t = numbers[i];
+                for(int j=0;j<i;j++){
+                   if(t<  numbers[j]){
+                      for(int k= i;k>j;k--){
+                        numbers[k] = numbers[k-1];
+                        numbers[j]= t;
+                        break;
+
+                      }
+                   }
+                }
+         }
+    
+    for(int i=0; i<size; i++) {
+         System.out.println( numbers[i] );
+
+    }
+   
+}
+}
