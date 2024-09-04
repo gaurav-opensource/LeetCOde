@@ -1,0 +1,12 @@
+class Solution {
+    HashMap<Integer> map = new HashMap<>();// Create a hashmap 
+
+      int compl = target - nums[i];     // compl are store 
+        for(int i=0;i<nums.length ;i++){  
+            if(map.containsKey(compl)){   //if compl is contains in the map then return compl and i  
+                 return new int[] { map.get(compl), i };
+             }
+           map.put(nums[i], i); //else valu is  store in the map
+         }
+       return new int[] {}; // when array is empty
+    }
