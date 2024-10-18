@@ -1,0 +1,20 @@
+class Solution {
+    public int secondHighest(String s) {
+        int first = -1; // Highest numeric character
+        int second = -1; // Second highest numeric character
+        
+        for(int c:  s.toCharArray()){
+            if (Character.isDigit(c)) { 
+                 int num = c - '0'; // Convert the character to its numeric value
+
+                if (num > first) { // Update first and second if the number is larger than the current highest
+                    second = first;
+                    first = num;
+                } else if (num > second && num < first) { // Update second if the number is between first and second
+                    second = num;
+                }
+            }
+        }
+    return second;
+    } 
+}
