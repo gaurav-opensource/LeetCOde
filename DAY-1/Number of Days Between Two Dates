@@ -29,6 +29,7 @@ class Solution {
 
         // Add the days from the years from 1971 to the current year
         return day + yearsFrom1971 * 365 + countLeapYearsSince1971(year);
+        
     }
 
     private int countLeapYearsSince1971(int year) {
