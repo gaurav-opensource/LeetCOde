@@ -1,0 +1,17 @@
+             
+
+
+                                         Day - 1:
+                                            -> Graphs:
+                                                 Graph Basics:
+                                                  Understand graph representation (adjacency matrix, adjacency list).
+                                                   Learn about graph traversal techniques:
+Breadth-First Search (BFS).
+Depth-First Search (DFS).
+Graph Problems:
+Solve problems on:
+Detecting cycles in an undirected and directed graph.
+Finding connected components.
+Shortest path problems (using BFS for unweighted graphs).
+Key Problems: Graph coloring, topological sorting.
+                                            
