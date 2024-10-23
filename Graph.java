@@ -3,7 +3,7 @@ import java.util.*;
 public class Graph { // Renamed class to 'Graph'
     static class Edge {
         int src;
-        int dest;
+        int dest;                                                                                                                                                                          
         int wt;
 
         public Edge(int s, int d, int w) {

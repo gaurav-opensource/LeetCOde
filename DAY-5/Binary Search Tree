@@ -1,0 +1,101 @@
+public class Bst {
+    public static class Node {
+        int data;
+        Node left;
+        Node right;
+
+        Node(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
+    }
+     // add element
+
+
+    public static Node addelement(Node root, int val) {
+        if (root == null) {
+            return new Node(val);
+        }
+        if (val < root.data) {
+            root.left = addelement(root.left, val);
+        } else if (val > root.data) {
+            root.right = addelement(root.right, val);
+        }
+        return root;
+    }
+     // print Element
+
+
+    public static void printelement(Node root) {
+        if (root == null) {
+            return;
+        }
+        printelement(root.left);
+        System.out.print(root.data + "->");
+        printelement(root.right);
+    }
+    //Search element
+
+
+    public static void searchElement(Node root, int val) {
+        if (root == null) {
+            System.out.println("\nElement not found");
+        } else if (root.data == val) {
+            System.out.println("\nElement found");
+        } else if (root.data > val) {
+            searchElement(root.left, val);
+        } else {
+            searchElement(root.right, val);
+        }
+    }
+  // delete Element
+
+  
+    public static Node deleteElement(Node root, int val) {
+        if (root == null) {
+            System.out.println("Element not present in the tree");
+            return null;
+        }
+        if (val < root.data) {
+            root.left = deleteElement(root.left, val);
+        } else if (val > root.data) {
+            root.right = deleteElement(root.right, val);
+        } else {
+            if (root.left == null && root.right == null) {
+                return null;
+            }
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+            Node IS = inorderSuccessor(root.right);
+            root.data = IS.data;
+            root.right = deleteElement(root.right, IS.data);
+        }
+        return root;
+    }
+
+    public static Node inorderSuccessor(Node root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 7, 2, 4, 6, 8};
+        Node root = null;
+
+        for (int val : arr) {
+            root = addelement(root, val);
+        }
+
+        printelement(root);
+        searchElement(root, 1);
+        System.out.println();
+        root = deleteElement(root, 5);
+        printelement(root);
+    }
+}
